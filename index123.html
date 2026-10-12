@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="Aster & Stone Realty — thoughtfully chosen homes, honest advice, and a better way to move in Mumbai.">
+  <title>Aster & Stone — Find a place to become</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f3ee;
+      --white: #fffefa;
+      --ink: #1f3028;
+      --muted: #69756d;
+      --green: #284a39;
+      --green-deep: #1c382b;
+      --lime: #d6e0a3;
+      --clay: #c77e5d;
+      --line: #dedfd6;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --wrap: 1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { width: 23px; height: 1px; background: var(--clay); content: ""; }
+    .section { padding: 112px 0; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 44px; }
+    .section-heading h2 { max-width: 670px; margin: 13px 0 0; font: 500 clamp(38px, 5vw, 62px)/1.06 var(--serif); letter-spacing: -.04em; }
+    .section-heading > p { max-width: 340px; margin: 0 0 5px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .serif { font-family: var(--serif); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 51px; padding: 0 22px; border: 1px solid transparent; border-radius: 3px; background: var(--green); color: white; font-size: 12px; font-weight: 700; transition: background .25s, color .25s, transform .25s; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); background: var(--green-deep); }
+    .button-light { background: var(--lime); color: var(--ink); }
+    .button-light:hover { background: #e1e9ba; color: var(--ink); }
+    .button-outline { border-color: var(--line); background: transparent; color: var(--ink); }
+    .button-outline:hover { border-color: var(--green); background: var(--green); color: white; }
+    .arrow { font-size: 17px; line-height: 0; transition: transform .2s; }
+    .button:hover .arrow, .text-link:hover .arrow { transform: translateX(4px); }
+    .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--green); font-size: 12px; font-weight: 700; }
+
+    /* Navigation */
+    .topbar { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(31,48,40,.09); background: rgba(245,243,238,.94); backdrop-filter: blur(15px); }
+    .nav { display: flex; height: 78px; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; }
+    .brand-mark { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid var(--green); border-radius: 50%; color: var(--green); font: italic 19px var(--serif); }
+    .brand-name { font: 600 16px var(--serif); letter-spacing: -.02em; }
+    .brand-name small { display: block; margin-top: 2px; color: var(--muted); font: 700 8px var(--sans); letter-spacing: .2em; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a:not(.button) { color: #4e5c53; font-size: 11px; font-weight: 600; transition: color .2s; }
+    .nav-links a:not(.button):hover { color: var(--clay); }
+    .nav-links .button { min-height: 42px; padding-inline: 17px; font-size: 11px; }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 20px; cursor: pointer; }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding: 61px 0 74px; }
+    .hero::before { position: absolute; top: -210px; right: -170px; width: 600px; height: 600px; border: 1px solid rgba(40,74,57,.1); border-radius: 50%; content: ""; }
+    .hero::after { position: absolute; top: -135px; right: -95px; width: 450px; height: 450px; border: 1px solid rgba(40,74,57,.09); border-radius: 50%; content: ""; }
+    .hero-grid { position: relative; z-index: 1; display: grid; min-height: 530px; grid-template-columns: 1fr 1.03fr; align-items: center; gap: 50px; }
+    .hero-copy { padding: 0 0 22px 2px; animation: rise-in .8s both; }
+    .hero h1 { max-width: 610px; margin: 23px 0 20px; font: 500 clamp(53px, 7vw, 88px)/.99 var(--serif); letter-spacing: -.055em; }
+    .hero h1 em { color: var(--clay); font-weight: 500; }
+    .hero-copy > p { max-width: 425px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .hero-proof { display: flex; align-items: center; gap: 14px; margin-top: 42px; }
+    .avatar-stack { display: flex; padding-left: 3px; }
+    .avatar-stack img { width: 32px; height: 32px; margin-left: -4px; border: 2px solid var(--paper); border-radius: 50%; object-fit: cover; }
+    .proof-copy { font-size: 10px; color: var(--muted); line-height: 1.6; }
+    .proof-copy strong { color: var(--ink); font-size: 11px; }
+    .hero-image { position: relative; min-width: 0; animation: rise-in .9s .15s both; }
+    .hero-image > img { width: 100%; height: 495px; border-radius: 170px 170px 3px 3px; object-fit: cover; object-position: center; }
+    .image-label { position: absolute; bottom: 22px; left: -28px; display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--white); box-shadow: 0 12px 36px #1f30281a; }
+    .label-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: var(--lime); color: var(--green); font-size: 17px; }
+    .image-label span { display: block; color: var(--muted); font-size: 9px; }
+    .image-label strong { display: block; margin-top: 3px; font: 600 15px var(--serif); }
+    .image-index { position: absolute; right: -22px; bottom: 26px; color: rgba(255,255,255,.8); font-size: 10px; letter-spacing: .14em; writing-mode: vertical-rl; }
+    .searchbar { position: relative; z-index: 3; display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 0; margin-top: -8px; padding: 13px; background: var(--white); box-shadow: 0 15px 50px #263c2e12; }
+    .search-field { padding: 5px 20px; border-right: 1px solid var(--line); }
+    .search-field label { display: block; margin-bottom: 5px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .search-field select { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 12px; }
+    .searchbar .button { align-self: stretch; min-height: 48px; }
+
+    /* Stats */
+    .stats { border-block: 1px solid var(--line); background: #efeee8; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 27px 0; }
+    .stat { padding: 5px 20px; border-right: 1px solid var(--line); text-align: center; }
+    .stat:first-child { padding-left: 0; }
+    .stat:last-child { border: 0; padding-right: 0; }
+    .stat strong { font: 500 31px var(--serif); }
+    .stat span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+
+    /* Projects */
+    .projects { background: var(--white); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -14px 0 27px; }
+    .filter-btn { padding: 9px 15px; border: 1px solid var(--line); border-radius: 30px; background: transparent; color: var(--muted); font-size: 10px; cursor: pointer; transition: .2s; }
+    .filter-btn:hover, .filter-btn[aria-pressed="true"] { border-color: var(--green); background: var(--green); color: white; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project-card { overflow: hidden; border: 1px solid #e9e8e1; background: var(--white); transition: transform .35s, box-shadow .35s; }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px #1f302814; }
+    .project-photo { position: relative; height: 225px; overflow: hidden; }
+    .project-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
+    .project-card:hover .project-photo img { transform: scale(1.055); }
+    .project-tag { position: absolute; top: 14px; left: 14px; padding: 7px 10px; background: var(--white); color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .project-body { padding: 21px; }
+    .project-location { color: var(--muted); font-size: 10px; }
+    .project-body h3 { margin: 7px 0 11px; font: 500 23px var(--serif); }
+    .project-meta { display: flex; justify-content: space-between; gap: 10px; padding: 12px 0; border-block: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+    .project-bottom { display: flex; align-items: end; justify-content: space-between; gap: 12px; padding-top: 14px; }
+    .project-price small { display: block; color: var(--muted); font-size: 9px; }
+    .project-price strong { display: block; margin-top: 3px; font: 600 17px var(--serif); }
+    .project-bottom a { color: var(--green); font-size: 11px; font-weight: 700; }
+
+    /* About and services */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 75px; }
+    .about-picture { position: relative; padding: 0 35px 35px 0; }
+    .about-picture > img { width: 100%; height: 485px; object-fit: cover; }
+    .about-picture::after { position: absolute; right: 0; bottom: 0; z-index: -1; width: 70%; height: 62%; background: var(--lime); content: ""; }
+    .about-note { position: absolute; right: 0; bottom: 19px; width: 165px; padding: 17px; background: var(--green); color: white; }
+    .about-note strong { font: 500 27px var(--serif); }
+    .about-note span { display: block; margin-top: 4px; color: #d5ddce; font-size: 9px; line-height: 1.6; }
+    .about-copy h2 { margin: 15px 0 20px; font: 500 clamp(39px, 5vw, 61px)/1.08 var(--serif); letter-spacing: -.04em; }
+    .about-copy > p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 22px; margin: 26px 0 28px; }
+    .value { display: flex; align-items: flex-start; gap: 10px; font-size: 11px; font-weight: 600; }
+    .value-mark { display: grid; width: 24px; height: 24px; flex: 0 0 24px; place-items: center; border-radius: 50%; background: #e8edda; color: var(--green); font-size: 12px; }
+    .services { background: var(--green-deep); color: white; }
+    .services .eyebrow { color: var(--lime); }
+    .services .section-heading h2 { color: white; }
+    .services .section-heading > p { color: #c1cec3; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #ffffff2b; }
+    .service-card { min-height: 232px; padding: 27px 23px; border-right: 1px solid #ffffff2b; transition: background .25s; }
+    .service-card:first-child { border-left: 1px solid #ffffff2b; }
+    .service-card:hover { background: #ffffff0b; }
+    .service-number { color: var(--lime); font: italic 15px var(--serif); }
+    .service-card h3 { margin: 25px 0 9px; font: 500 24px var(--serif); }
+    .service-card p { min-height: 58px; margin: 0 0 18px; color: #c1cec3; font-size: 11px; line-height: 1.75; }
+    .service-card a { color: var(--lime); font-size: 10px; font-weight: 700; }
+
+    /* Testimonials */
+    .stories { overflow: hidden; background: #e9ede2; }
+    .story-wrap { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 60px; }
+    .story-intro h2 { margin: 14px 0; font: 500 clamp(40px, 5vw, 60px)/1.07 var(--serif); letter-spacing: -.04em; }
+    .story-intro > p { max-width: 335px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .story-controls { display: flex; gap: 9px; margin-top: 25px; }
+    .story-control { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid #cbd2c6; border-radius: 50%; background: transparent; color: var(--green); font-size: 18px; cursor: pointer; transition: .2s; }
+    .story-control:hover { background: var(--green); color: white; }
+    .story-window { overflow: hidden; }
+    .story-track { display: flex; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+    .story { flex: 0 0 100%; padding: 35px 38px; background: var(--white); }
+    .stars { color: #b97a48; font-size: 13px; letter-spacing: .17em; }
+    .story blockquote { margin: 22px 0 30px; font: 500 clamp(22px, 2.8vw, 32px)/1.45 var(--serif); }
+    .story-person { display: flex; align-items: center; gap: 12px; }
+    .story-person img { width: 43px; height: 43px; border-radius: 50%; object-fit: cover; }
+    .story-person strong { display: block; font-size: 11px; }
+    .story-person span { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; }
+
+    /* Contact and footer */
+    .contact { padding: 102px 0; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 76px; }
+    .contact-copy h2 { margin: 15px 0 18px; font: 500 clamp(43px, 5vw, 64px)/1.04 var(--serif); letter-spacing: -.04em; }
+    .contact-copy > p { max-width: 400px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .contact-details { display: grid; gap: 17px; margin-top: 29px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 12px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .contact-item b { display: block; margin-bottom: 2px; color: var(--ink); font-size: 10px; }
+    .contact-icon { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; background: #e8edda; color: var(--green); }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; padding: 30px; background: var(--paper); }
+    .form-field { display: grid; gap: 7px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { color: #526057; font-size: 10px; font-weight: 700; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 45px; padding: 12px; border: 1px solid #dfe1d8; border-radius: 0; outline: none; background: var(--white); color: var(--ink); font-size: 11px; }
+    .form-field textarea { min-height: 90px; resize: vertical; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 2px #284a3915; }
+    .contact-form .button { grid-column: 1 / -1; justify-self: start; }
+    .form-hint { grid-column: 1 / -1; margin: -7px 0 0; color: var(--muted); font-size: 9px; }
+    .footer { padding: 48px 0 23px; background: var(--green-deep); color: white; }
+    .footer-top { display: flex; justify-content: space-between; gap: 35px; padding-bottom: 37px; }
+    .footer .brand-mark { border-color: #c6d4b4; color: #d6e0a3; }
+    .footer .brand-name small { color: #a7b9a9; }
+    .footer-blurb { max-width: 290px; margin: 16px 0 0; color: #c1cec3; font-size: 10px; line-height: 1.8; }
+    .footer-nav { display: flex; align-items: flex-start; gap: 28px; padding-top: 10px; }
+    .footer-nav a { color: #e3e9df; font-size: 10px; }
+    .footer-nav a:hover { color: var(--lime); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 18px; padding-top: 17px; border-top: 1px solid #ffffff2b; color: #a7b9a9; font-size: 9px; }
+    .whatsapp { position: fixed; z-index: 15; right: 22px; bottom: 22px; display: grid; width: 54px; height: 54px; place-items: center; border: 3px solid var(--paper); border-radius: 50%; background: #25a66a; color: white; box-shadow: 0 7px 25px #1f302832; font-size: 23px; transition: transform .2s; }
+    .whatsapp:hover { transform: scale(1.08); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s, transform .7s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .nav-links a:not(.button) { font-size: 10px; }
+      .hero-grid { grid-template-columns: .95fr 1.05fr; gap: 30px; }
+      .hero-image > img { height: 430px; }
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 42px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card:nth-child(3) { border-left: 1px solid #ffffff2b; }
+      .service-card:nth-child(-n+2) { border-bottom: 1px solid #ffffff2b; }
+      .story-wrap { gap: 35px; }
+      .contact-grid { gap: 40px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(var(--wrap), calc(100% - 34px)); }
+      .section { padding: 77px 0; }
+      .section-heading { display: block; margin-bottom: 31px; }
+      .section-heading > p { margin-top: 15px; }
+      .nav { height: 67px; }
+      .menu-toggle { display: block; }
+      .nav-links { position: absolute; top: 66px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 17px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a:not(.button) { padding: 12px 4px; border-bottom: 1px solid #dedfd699; font-size: 12px; }
+      .nav-links .button { align-self: flex-start; margin-top: 13px; }
+      .hero { padding: 44px 0 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      .hero h1 { font-size: clamp(54px, 15vw, 76px); }
+      .hero-copy > p { font-size: 13px; }
+      .hero-image { margin-inline: 14px 9px; }
+      .hero-image > img { height: 365px; border-radius: 135px 135px 3px 3px; }
+      .image-label { left: -13px; bottom: 15px; padding: 11px 13px; }
+      .image-index { right: -14px; bottom: 18px; }
+      .searchbar { grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 24px; padding: 13px; }
+      .search-field { padding: 7px 9px; border: 1px solid var(--line); }
+      .searchbar .button { grid-column: 1 / -1; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 0; padding: 12px 0; }
+      .stat { padding: 16px 6px; border-right: 0; }
+      .stat:nth-child(odd) { border-right: 1px solid var(--line); }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .stat strong { font-size: 28px; }
+      .project-grid { grid-template-columns: 1fr; gap: 16px; }
+      .project-photo { height: 225px; }
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about-picture { padding-right: 24px; }
+      .about-picture > img { height: 370px; }
+      .about-copy h2 { font-size: 46px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { min-height: 220px; padding: 22px 14px; }
+      .service-card h3 { font-size: 21px; }
+      .story-wrap { grid-template-columns: 1fr; gap: 26px; }
+      .story-intro h2 { font-size: 46px; }
+      .story-intro > p { margin-bottom: 0; }
+      .story { padding: 25px 22px; }
+      .story blockquote { font-size: 24px; }
+      .contact { padding: 77px 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 31px; }
+      .contact-copy h2 { font-size: 49px; }
+      .contact-form { gap: 13px; padding: 20px; }
+      .contact-form .button { width: 100%; }
+      .footer-top { flex-direction: column; }
+      .footer-nav { flex-wrap: wrap; gap: 15px 22px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+      .whatsapp { right: 14px; bottom: 14px; width: 49px; height: 49px; }
+    }
+    @media (max-width: 390px) {
+      .hero-actions .button { width: 100%; }
+      .values { gap: 14px 10px; }
+      .service-card p { font-size: 10px; }
+      .contact-form { grid-template-columns: 1fr; }
+      .form-field.full, .contact-form .button, .form-hint { grid-column: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Aster and Stone home">
+        <span class="brand-mark">A</span><span class="brand-name">ASTER &amp; STONE<small>REALTY · MUMBAI</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#projects">Properties</a><a href="#about">Our story</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+        <a class="button" href="#contact">Let's talk <span class="arrow">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid wrap">
+        <div class="hero-copy">
+          <span class="eyebrow">A more considered move</span>
+          <h1>Find a place<br>to <em>become.</em></h1>
+          <p>Good homes change how a day feels. We help you find the right one—with local insight, honest advice, and care in every detail.</p>
+          <div class="hero-actions">
+            <a class="button" href="#projects">Explore homes <span class="arrow">↗</span></a>
+            <a class="button button-outline" href="#about">Meet your advisors</a>
+          </div>
+          <div class="hero-proof">
+            <div class="avatar-stack" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&h=80&q=80" alt="">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&h=80&q=80" alt="">
+              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=80&h=80&q=80" alt="">
+            </div>
+            <div class="proof-copy"><strong>Good moves, made together.</strong><br>Trusted by 1,200+ Mumbai home seekers</div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85" alt="Sunlit contemporary home with warm, natural finishes">
+          <div class="image-label"><span class="label-icon">⌂</span><span>Featured neighbourhood<strong>Powai, Mumbai</strong></span></div>
+          <span class="image-index">01 / 04 &nbsp; — &nbsp; FIND YOUR PLACE</span>
+        </div>
+      </div>
+      <form class="searchbar wrap" id="searchForm" aria-label="Find a property">
+        <div class="search-field"><label for="purpose">I'm looking to</label><select id="purpose"><option value="Buy">Buy a home</option><option value="Rent">Rent a home</option><option value="Sell">Sell a home</option></select></div>
+        <div class="search-field"><label for="location">Neighbourhood</label><select id="location"><option value="Any neighbourhood">Any neighbourhood</option><option>Powai</option><option>Vikhroli</option><option>Mulund</option><option>Goregaon</option><option>Thane</option></select></div>
+        <div class="search-field"><label for="homeType">Home type</label><select id="homeType"><option value="Any home type">Any home type</option><option>1 BHK</option><option>2 BHK</option><option>3 BHK</option><option>4 BHK</option></select></div>
+        <button class="button" type="submit">Find my home <span class="arrow">↗</span></button>
+      </form>
+    </section>
+
+    <section class="stats" aria-label="Our achievements">
+      <div class="stats-grid wrap">
+        <div class="stat"><strong data-count="1200" data-suffix="+">1,200+</strong><span>Happy home seekers</span></div>
+        <div class="stat"><strong data-count="840" data-suffix="+">840+</strong><span>Successful deals</span></div>
+        <div class="stat"><strong data-count="12" data-suffix=" yrs">12 yrs</strong><span>Local experience</span></div>
+        <div class="stat"><strong data-count="96" data-suffix="%">96%</strong><span>Client referrals</span></div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">A few good places</span><h2>Homes with a little<br>more <em class="serif">feeling.</em></h2></div>
+          <p>Thoughtfully selected addresses around Mumbai. Explore a few favourites, then tell us what feels like you.</p>
+        </div>
+        <div class="filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter-btn" type="button" data-filter="All" aria-pressed="true">All homes</button>
+          <button class="filter-btn" type="button" data-filter="Buy" aria-pressed="false">For sale</button>
+          <button class="filter-btn" type="button" data-filter="Rent" aria-pressed="false">For rent</button>
+          <button class="filter-btn" type="button" data-filter="Ready to move" aria-pressed="false">Ready to move</button>
+        </div>
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card reveal" data-purpose="Buy" data-status="Under construction">
+            <div class="project-photo"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Bright luxury apartment with floor-to-ceiling windows"><span class="project-tag">New launch · For sale</span></div>
+            <div class="project-body"><span class="project-location">Powai · Mumbai</span><h3>The Canopy Residences</h3><div class="project-meta"><span>2 &amp; 3 BHK</span><span>Under construction</span></div><div class="project-bottom"><div class="project-price"><small>Starting from</small><strong>₹ 2.4 Cr</strong></div><a href="#contact">Enquire <span class="arrow">↗</span></a></div></div>
+          </article>
+          <article class="project-card reveal" data-purpose="Buy" data-status="Ready to move">
+            <div class="project-photo"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Calm modern home with natural light and garden views"><span class="project-tag">Ready to move · For sale</span></div>
+            <div class="project-body"><span class="project-location">Mulund West · Mumbai</span><h3>Olive Grove House</h3><div class="project-meta"><span>2, 3 &amp; 4 BHK</span><span>Ready to move</span></div><div class="project-bottom"><div class="project-price"><small>Starting from</small><strong>₹ 1.8 Cr</strong></div><a href="#contact">Enquire <span class="arrow">↗</span></a></div></div>
+          </article>
+          <article class="project-card reveal" data-purpose="Rent" data-status="Ready to move">
+            <div class="project-photo"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Contemporary rental apartment with elegant warm interiors"><span class="project-tag">For rent · Furnished</span></div>
+            <div class="project-body"><span class="project-location">Vikhroli East · Mumbai</span><h3>Verde at the Park</h3><div class="project-meta"><span>2 BHK · Furnished</span><span>Ready to move</span></div><div class="project-bottom"><div class="project-price"><small>Monthly rent</small><strong>₹ 68,000</strong></div><a href="#contact">Enquire <span class="arrow">↗</span></a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about-grid wrap">
+        <div class="about-picture reveal">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="A welcoming home interior filled with natural light">
+          <div class="about-note"><strong>12 years</strong><span>Helping Mumbai find its next chapter, one thoughtful move at a time.</span></div>
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">A little about us</span>
+          <h2>Real estate is<br>really about <em class="serif">people.</em></h2>
+          <p>We started Aster &amp; Stone with a simple belief: finding a home should feel exciting, not exhausting. Today, our independent Mumbai team brings neighbourhood knowledge and thoughtful guidance to every move.</p>
+          <p>From the first shortlist to the final handshake, you’ll have an experienced person by your side—someone who listens first, gives it to you straight, and cares how the story ends.</p>
+          <div class="values">
+            <div class="value"><span class="value-mark">✓</span> Advice without the pressure</div>
+            <div class="value"><span class="value-mark">✓</span> Local, lived-in knowledge</div>
+            <div class="value"><span class="value-mark">✓</span> Clear answers at every step</div>
+            <div class="value"><span class="value-mark">✓</span> Here long after the keys</div>
+          </div>
+          <a class="text-link" href="#contact">Get to know us <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Here for the whole journey</span><h2>One good partner.<br>Every next <em class="serif">step.</em></h2></div>
+          <p>Big decision or small detail, our team makes the moving parts feel a little more manageable.</p>
+        </div>
+        <div class="service-grid reveal">
+          <article class="service-card"><span class="service-number">01 / FIND</span><h3>Buy a home</h3><p>From first-time keys to the forever home, find the right fit for your life and budget.</p><a href="#contact">Find a home ↗</a></article>
+          <article class="service-card"><span class="service-number">02 / SETTLE</span><h3>Rent a home</h3><p>Quality rentals, careful shortlists, and help through the details of your lease.</p><a href="#contact">Find a rental ↗</a></article>
+          <article class="service-card"><span class="service-number">03 / MOVE ON</span><h3>Sell a home</h3><p>Thoughtful positioning, the right audience, and a clear plan from valuation to close.</p><a href="#contact">Sell with us ↗</a></article>
+          <article class="service-card"><span class="service-number">04 / GROW</span><h3>Invest well</h3><p>Local market insight and considered opportunities for your next investment.</p><a href="#contact">Explore investing ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stories" id="reviews">
+      <div class="story-wrap wrap">
+        <div class="story-intro reveal"><span class="eyebrow">Kind words, real moves</span><h2>Better when<br>we do it <em class="serif">together.</em></h2><p>Every review is a reminder of why we love what we do. Here are a few stories from our clients.</p><div class="story-controls"><button class="story-control" type="button" id="storyPrev" aria-label="Previous testimonial">←</button><button class="story-control" type="button" id="storyNext" aria-label="Next testimonial">→</button></div></div>
+        <div class="story-window reveal"><div class="story-track" id="storyTrack" aria-live="polite">
+          <article class="story"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“We never felt rushed or pushed. The team just understood what mattered to us, and somehow found the one place that ticked every box.”</blockquote><div class="story-person"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt=""><div><strong>Ananya &amp; Karan Mehta</strong><span>First home · Powai</span></div></div></article>
+          <article class="story"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From the first walkthrough to the paperwork, everything was so clear. We found a home we love, and a team we'd recommend to anyone.”</blockquote><div class="story-person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" alt=""><div><strong>Rohan Shah</strong><span>Homeowner · Mulund</span></div></div></article>
+          <article class="story"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Selling a home can be stressful. Their honest pricing advice and steady communication made the whole experience feel surprisingly easy.”</blockquote><div class="story-person"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&h=100&q=80" alt=""><div><strong>Priya Nair</strong><span>Seller · Vikhroli</span></div></div></article>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid wrap">
+        <div class="contact-copy reveal"><span class="eyebrow">Your next move starts here</span><h2>Let's find your<br><em class="serif">somewhere.</em></h2><p>Tell us what you’re looking for. No pressure, no obligation—just a real conversation with someone who knows the neighbourhood.</p>
+          <div class="contact-details">
+            <div class="contact-item"><span class="contact-icon">⌖</span><div><b>Come say hello</b>Powai, Mumbai, Maharashtra</div></div>
+            <div class="contact-item"><span class="contact-icon">✆</span><div><b>Call our team</b><a href="tel:+919876543210">+91 98765 43210</a></div></div>
+            <div class="contact-item"><span class="contact-icon">✉</span><div><b>Write us a note</b><a href="mailto:hello@asterandstone.example">hello@asterandstone.example</a></div></div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="enquiryForm">
+          <div class="form-field"><label for="name">Your name</label><input id="name" name="name" placeholder="e.g. Aditi Sharma" required></div>
+          <div class="form-field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" placeholder="+91" required></div>
+          <div class="form-field"><label for="interest">I'm interested in</label><select id="interest" name="interest"><option>Buying a home</option><option>Renting a home</option><option>Selling my property</option><option>Property investment</option><option>Something else</option></select></div>
+          <div class="form-field"><label for="area">Preferred neighbourhood</label><input id="area" name="area" placeholder="e.g. Powai"></div>
+          <div class="form-field full"><label for="message">A little more about what you need</label><textarea id="message" name="message" placeholder="Bedrooms, budget, timing—whatever you'd like us to know."></textarea></div>
+          <button class="button" type="submit">Send enquiry on WhatsApp <span class="arrow">↗</span></button>
+          <p class="form-hint">This demo opens WhatsApp with your message ready to send. No information is stored on this page.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div><a class="brand" href="#home"><span class="brand-mark">A</span><span class="brand-name">ASTER &amp; STONE<small>REALTY · MUMBAI</small></span></a><p class="footer-blurb">Thoughtfully chosen homes. Honest advice. A better way to move.</p></div>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="#projects">Properties</a><a href="#about">Our story</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Aster &amp; Stone Realty. Demo website.</span><span>Made for the next chapter.</span></div>
+    </div>
+  </footer>
+  <a class="whatsapp" href="https://wa.me/919876543210?text=Hi%20Aster%20%26%20Stone%2C%20I%27d%20like%20to%20know%20more%20about%20your%20properties." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">◉</a>
+
+  <script>
+    const navToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("#navLinks");
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      navToggle.textContent = isOpen ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation menu");
+      navToggle.textContent = "☰";
+    }));
+
+    const cards = [...document.querySelectorAll(".project-card")];
+    document.querySelectorAll(".filter-btn").forEach(button => button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      document.querySelectorAll(".filter-btn").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      cards.forEach(card => {
+        const matches = filter === "All" || (filter === "Ready to move" ? card.dataset.status === filter : card.dataset.purpose === filter);
+        card.hidden = !matches;
+      });
+    }));
+    document.querySelector("#searchForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const purpose = document.querySelector("#purpose").value;
+      const location = document.querySelector("#location").value;
+      const homeType = document.querySelector("#homeType").value;
+      const details = [purpose, location, homeType].filter(value => !value.startsWith("Any ")).join(" · ");
+      document.querySelector("#interest").value = purpose === "Buy" ? "Buying a home" : purpose === "Rent" ? "Renting a home" : "Selling my property";
+      document.querySelector("#message").value = `I'm looking for: ${details || purpose}. Please get in touch.`;
+      document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+    });
+
+    const storyTrack = document.querySelector("#storyTrack");
+    const stories = [...storyTrack.children];
+    let currentStory = 0;
+    function showStory(index) {
+      currentStory = (index + stories.length) % stories.length;
+      storyTrack.style.transform = `translateX(-${currentStory * 100}%)`;
+    }
+    document.querySelector("#storyPrev").addEventListener("click", () => showStory(currentStory - 1));
+    document.querySelector("#storyNext").addEventListener("click", () => showStory(currentStory + 1));
+
+    document.querySelector("#enquiryForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const message = [
+        "Hi Aster & Stone, I'd like to enquire about your real estate services.",
+        `Name: ${form.get("name")}`,
+        `Phone: ${form.get("phone")}`,
+        `Interested in: ${form.get("interest")}`,
+        `Preferred area: ${form.get("area") || "Not specified"}`,
+        `Message: ${form.get("message") || "Please get in touch."}`
+      ].join("\n");
+      window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      }), { threshold: .12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
